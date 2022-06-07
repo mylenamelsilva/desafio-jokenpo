@@ -1,21 +1,21 @@
 const getUserChoice = (userInput) => {
-    const userAnswer = userInput.toLowerCase()
-    
-    switch (userAnswer) {
-        case 'papel':
-            return userAnswer;
-            break;
-        case 'pedra':
-            return userAnswer;
-            break;
-        case 'tesoura':
-            return userAnswer;
-            break;
-        default:
-            return `ERRO: Escolha pedra, papel ou tesoura.`;
-            break;
-    }
-}
+  const userAnswer = userInput.toLowerCase();
+
+  switch (userAnswer) {
+    case "papel":
+      return userAnswer;
+      break;
+    case "pedra":
+      return userAnswer;
+      break;
+    case "tesoura":
+      return userAnswer;
+      break;
+    default:
+      return `ERRO: Escolha pedra, papel ou tesoura.`;
+      break;
+  }
+};
 
 // console.log(getUserChoice('PedRA'));
 // console.log(getUserChoice('papel'));
@@ -23,22 +23,61 @@ const getUserChoice = (userInput) => {
 // console.log(getUserChoice('qualquerum'));
 
 const getComputerChoice = () => {
-    const computerAnswer = Math.floor(Math.random() * 3);
+  const computerAnswer = Math.floor(Math.random() * 3);
 
-    switch (computerAnswer) {
-        case 0:
-            return `pedra`;
-            break;
-        case 1:
-            return `papel`;
-            break;
-        case 2:
-            return `tesoura`;
-            break;
-        default:
-            return 'ERRO: Escolha pedra, papel ou tesoura';
-            break;
-    }
-}
+  switch (computerAnswer) {
+    case 0:
+      return `pedra`;
+      break;
+    case 1:
+      return `papel`;
+      break;
+    case 2:
+      return `tesoura`;
+      break;
+    default:
+      return "ERRO: Escolha pedra, papel ou tesoura";
+      break;
+  }
+};
 
 // console.log(getComputerChoice())
+
+function determineWinner(userChoice, computerChoice) {
+  if (userChoice == computerChoice) {
+    return "Empate!";
+  } else {
+    if (userChoice == "pedra" && computerChoice == "tesoura") {
+      return "Pedra ganha da Tesoura. Você ganhou!";
+    } else if (userChoice == "tesoura" && computerChoice == "papel") {
+      return "Tesoura ganha do papel. Você ganhou!";
+    } else if (userChoice == "papel" && computerChoice == "pedra") {
+      return "Papel ganha da pedra. Você ganhou!";
+    } else if (computerChoice == "pedra" && userChoice == "tesoura") {
+      return "Pedra ganha da Tesoura. Você perdeu!";
+    } else if (computerChoice == "tesoura" && userChoice == "papel") {
+      return "Tesoura ganha do papel. Você perdeu!";
+    } else if (computerChoice == "papel" && userChoice == "pedra") {
+      return "Papel ganha da pedra. Você perdeu!";
+    }
+}
+}
+
+function playGame() {
+    var userChoicePrompt = prompt(
+      "Escolha um valor entre 'pedra', 'papel' ou 'tesoura': "
+    );
+    let userChoice = getUserChoice(userChoicePrompt);
+    console.log("Opção do usuário: " + userChoice);
+    let computerChoice = getComputerChoice();
+    console.log("Opção do computador: " + computerChoice);
+
+    console.log(
+      "Seu valor escolhido foi: " + userChoice + ".",
+      "O valor da máquina foi: " + computerChoice
+    );
+
+    console.log(determineWinner(userChoice, computerChoice));
+
+}
+playGame();
