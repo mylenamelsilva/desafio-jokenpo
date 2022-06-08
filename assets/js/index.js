@@ -81,6 +81,7 @@ function playGame() {
   ));
   // console.log(determineWinner(userChoice, computerChoice));
 }
+// playGame();
 
 function usuarioName(userName) {
   let name = userName[0].toUpperCase() + userName.substring(1).toLowerCase();
@@ -95,4 +96,4 @@ function submitUsuario() {
 
   return user;
 }
-// playGame();
+
