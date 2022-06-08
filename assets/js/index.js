@@ -19,7 +19,7 @@ const getUserChoice = (userInput) => {
 
 //console.log(getUserChoice('PedRA'));
 //console.log(getUserChoice('papel'));
-//console.log(getUserChoice('TESOURA'));
+//console.log(getUserChoice('teSOura'));
 //console.log(getUserChoice('qualquerum'));
 
 const getComputerChoice = () => {
@@ -45,43 +45,54 @@ function determineWinner(userChoice, computerChoice) {
     return "Empate!";
   } else {
     if (userChoice == "pedra" && computerChoice == "tesoura") {
-      return "Pedra ganha da Tesoura. Você ganhou!";
+      return `${submitUsuario()}, pedra ganha da tesoura. Você ganhou!`;
     } else if (userChoice == "tesoura" && computerChoice == "papel") {
-      return "Tesoura ganha do papel. Você ganhou!";
+      return `${submitUsuario()}, tesoura ganha do papel. Você ganhou!`;
     } else if (userChoice == "papel" && computerChoice == "pedra") {
-      return "Papel ganha da pedra. Você ganhou!";
+      return `${submitUsuario()}, papel ganha da pedra. Você ganhou!`;
     } else if (computerChoice == "pedra" && userChoice == "tesoura") {
-      return "Pedra ganha da Tesoura. Você perdeu!";
+      return `${submitUsuario()}, pedra ganha da tesoura. Você perdeu!`;
     } else if (computerChoice == "tesoura" && userChoice == "papel") {
-      return "Tesoura ganha do papel. Você perdeu!";
+      return `${submitUsuario()}, tesoura ganha do papel. Você perdeu!`;
     } else if (computerChoice == "papel" && userChoice == "pedra") {
-      return "Papel ganha da pedra. Você perdeu!";
+      return `${submitUsuario()}, papel ganha da pedra. Você perdeu!`;
     } else {
-      return `ERRO: Escolha pedra, papel ou tesoura.`
+      return `ERRO: Escolha pedra, papel ou tesoura.`;
     }
-
-}
+  }
 }
 
 function playGame() {
-    let userInput = document.getElementById('userInput').value;
+  let userInput = document.getElementById("userInput").value;
 
-    let userChoice = getUserChoice(userInput);
-    console.log("Opção do usuário: " + userChoice);
-    let computerChoice = getComputerChoice();
-    document.getElementById('computerAnswer').innerHTML = computerChoice
+  let userChoice = getUserChoice(userInput);
+  console.log("Opção do usuário: " + userChoice);
+  let computerChoice = getComputerChoice();
+  document.getElementById("computerAnswer").innerHTML = computerChoice;
 
-    console.log(
-      "Seu valor escolhido foi: " + userChoice + ".",
-      "O valor da máquina foi: " + computerChoice
-    );
+  console.log(
+    "Seu valor escolhido foi: " + userChoice + ".",
+    "O valor da máquina foi: " + computerChoice
+  );
 
-    let winner = document.getElementById('winner').innerHTML = determineWinner(userChoice, computerChoice)
-    // console.log(determineWinner(userChoice, computerChoice));
+  let winner = (document.getElementById("winner").innerHTML = determineWinner(
+    userChoice,
+    computerChoice
+  ));
+  // console.log(determineWinner(userChoice, computerChoice));
+}
 
+function usuarioName(userName) {
+  let name = userName[0].toUpperCase() + userName.substring(1).toLowerCase();
+
+  return name;
+}
+
+function submitUsuario() {
+  let userName = document.getElementById("userName").value;
+
+  let user = usuarioName(userName);
+
+  return user;
 }
 // playGame();
-<<<<<<< HEAD
-
-=======
->>>>>>> origin
