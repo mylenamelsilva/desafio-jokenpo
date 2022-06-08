@@ -17,10 +17,10 @@ const getUserChoice = (userInput) => {
   }
 };
 
-// console.log(getUserChoice('PedRA'));
-// console.log(getUserChoice('papel'));
-// console.log(getUserChoice('TESOURA'));
-// console.log(getUserChoice('qualquerum'));
+//console.log(getUserChoice('PedRA'));
+//console.log(getUserChoice('papel'));
+//console.log(getUserChoice('TESOURA'));
+//console.log(getUserChoice('qualquerum'));
 
 const getComputerChoice = () => {
   const computerAnswer = Math.floor(Math.random() * 3);
@@ -34,9 +34,6 @@ const getComputerChoice = () => {
       break;
     case 2:
       return `tesoura`;
-      break;
-    default:
-      return "ERRO: Escolha pedra, papel ou tesoura";
       break;
   }
 };
@@ -59,25 +56,29 @@ function determineWinner(userChoice, computerChoice) {
       return "Tesoura ganha do papel. Você perdeu!";
     } else if (computerChoice == "papel" && userChoice == "pedra") {
       return "Papel ganha da pedra. Você perdeu!";
+    } else {
+      return `ERRO: Escolha pedra, papel ou tesoura.`
     }
+
 }
 }
 
 function playGame() {
-    var userChoicePrompt = prompt(
-      "Escolha um valor entre 'pedra', 'papel' ou 'tesoura': "
-    );
-    let userChoice = getUserChoice(userChoicePrompt);
+    let userInput = document.getElementById('userInput').value;
+
+    let userChoice = getUserChoice(userInput);
     console.log("Opção do usuário: " + userChoice);
     let computerChoice = getComputerChoice();
-    console.log("Opção do computador: " + computerChoice);
+    document.getElementById('computerAnswer').innerHTML = computerChoice
 
     console.log(
       "Seu valor escolhido foi: " + userChoice + ".",
       "O valor da máquina foi: " + computerChoice
     );
 
-    console.log(determineWinner(userChoice, computerChoice));
+    let winner = document.getElementById('winner').innerHTML = determineWinner(userChoice, computerChoice)
+    // console.log(determineWinner(userChoice, computerChoice));
 
 }
-playGame();
+// playGame();
+
