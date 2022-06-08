@@ -22,4 +22,4 @@ poderoso ganha.
 4. Inicie o programa e exiba os resultados.
 
 ## Squad REACTon
-> Adriane Caroline, Arthur Aguiar, Gabriel Lucas, Mylena Mel, Thais Ferreira.
+> **Adriane Caroline, Arthur Aguiar, Gabriel Lucas, Mylena Mel, Thais Ferreira.**
