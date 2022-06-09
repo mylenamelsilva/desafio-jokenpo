@@ -23,3 +23,8 @@ poderoso ganha.
 
 ## Squad REACTon
 > **Adriane Caroline, Arthur Aguiar, Gabriel Lucas, Mylena Mel, Thais Ferreira.**
+* [Adriane Caroline](https://github.com/adrianecaroline)
+* [Arthur Aguiar](https://github.com/artthur-aguiar)
+* [Lucas Gabriel](https://github.com/lucasgabriel0613)
+* [Mylena Mel](https://github.com/mylenamelsilva)
+* [Thais Ferreira](https://github.com/ThaisSilva1)
